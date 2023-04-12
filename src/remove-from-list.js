@@ -32,14 +32,13 @@ function removeKFromList(l, k) {
     } else if (l.value === k) {
       l.value = next.value
       l.next = next.next
+    } else if ((next.value === k) && (!next.next)) {
+      l.next = null
     }
     removeKFromList(next, k)
-  } else if ((l.value === k)) {
-    l = null
-  }
   return l
 }
-
+}
 
 module.exports = {
   removeKFromList
